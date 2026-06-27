@@ -13,6 +13,7 @@ public class Hooks {
     @Before("@DeletePlace")
     public void beforeDeletePlace() throws FileNotFoundException {
 
+        // run @Addplace before to get place_id
         StepDefinitions definitions = new StepDefinitions();
         if(StepDefinitions.place_id == null) {
 
