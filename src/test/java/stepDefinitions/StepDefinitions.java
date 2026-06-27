@@ -58,7 +58,7 @@ public class StepDefinitions  extends ReusableCode {
 
         place_id = JsonPathUtil.jsonPathValue(response, "place_id");
 
-        requestSpecification = given().spec(requestBase()).queryParam("place_id", "nn");
+        requestSpecification = given().spec(requestBase()).queryParam("place_id", place_id);
 
         user_calls_with_post_http_request(resource, httpMethod);
 
