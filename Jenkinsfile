@@ -8,7 +8,7 @@ pipeline {
 
     stages {
         stage('test') {
-        
+
             steps {
                 script{
                     if(isUnix()){
@@ -22,7 +22,7 @@ pipeline {
     }
             post {
                 always{
-                     junit '**/target/surefire-reports/TEST-*.xml'
+                     junit '**/target/surefire-reports/*.xml'
                      allure results: [[path: 'target/allure-results']]
                 }
                 success {
