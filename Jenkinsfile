@@ -7,17 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('compile') {
-            steps {
-                script{
-                    if(isUnix()){
-                        sh 'mvn clean compile'
-                    }else{
-                        bat 'mvn clean compile'
-                    }
-                }
-            }
-        }
         stage('test') {
             steps {
                 script{
