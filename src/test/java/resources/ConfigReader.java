@@ -8,7 +8,7 @@ public class ConfigReader {
         static Properties properties;
    static{
         try {
-            FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + "/src/test/java/resources/global.properties");
+            FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/global.properties");
 
             properties = new Properties();
             properties.load(fileInputStream);
