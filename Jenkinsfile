@@ -26,7 +26,6 @@ pipeline {
                      allure results: [[path: 'target/allure-results']]
                 }
                 success {
-                   archiveArtifacts '**/target/*.jar'
                    echo 'build success'
                 }
                 failure {
