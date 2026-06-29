@@ -2,8 +2,11 @@ pipeline {
     agent any
 
     tools{
-        maven '3.9.12'
+        maven '3.9.14'
         jdk 'JDK25'
+    }
+    parameters {
+    string(name: 'TAG', defaultValue: '@Smoke', description: 'run smoke tests')
     }
 
     stages {
@@ -12,9 +15,9 @@ pipeline {
             steps {
                 script{
                     if(isUnix()){
-                        sh 'mvn test'
+                        sh 'mvn test -Dcucumber.filter.tags="${params.TAG}"'
                     }else{
-                        bat 'mvn test'
+                        bat 'mvn test -Dcucumber.filter.tags="$tag"'
                     }
                 }
             }

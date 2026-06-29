@@ -11,5 +11,5 @@ import org.junit.runner.RunWith;
         "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" }, features = "src/test/java/Features", glue = "stepDefinitions", tags = "@DeletePlace")
 
 public class TestRunner {
-//pushing
+
 }

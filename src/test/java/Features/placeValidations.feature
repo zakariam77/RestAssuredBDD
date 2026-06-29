@@ -1,5 +1,5 @@
 Feature: validating place Api's
-@AddPlace
+@AddPlace @Smoke
   Scenario Outline: add place using addPlace API
     Given Add Place Payload "<name>" "<language>" "<address>"
     When user calls "AddPlaceAPI" with "POST" http request

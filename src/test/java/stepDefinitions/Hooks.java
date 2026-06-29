@@ -16,8 +16,6 @@ public class Hooks {
             definitions.add_place_payload("John", "english", "wick");
             definitions.user_calls_with_post_http_request("AddPlaceAPI", "POST");
             definitions.verify_place_id_to_maps_name_using_using("John", "GetPlaceAPI", "GET");
-
-
         }
 
     }
