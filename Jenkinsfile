@@ -10,6 +10,11 @@ pipeline {
     }
 
     stages {
+    stage('cleanup') {
+    steps {
+            bat 'mvn clean'
+}
+}
         stage('test') {
 
             steps {
@@ -17,7 +22,7 @@ pipeline {
                     if(isUnix()){
                         sh 'mvn test -Dcucumber.filter.tags="${params.TAG}"'
                     }else{
-                        bat 'mvn test -Dcucumber.filter.tags="$tag"'
+                        bat 'mvn test -Dcucumber.filter.tags="${params.TAG}"'
                     }
                 }
             }
