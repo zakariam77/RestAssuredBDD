@@ -4,7 +4,6 @@ pipeline {
     tools{
         maven '3.9.14'
         jdk 'JDK21'
-        git '2.53.0'
     }
     parameters {
     string(name: 'TAG', defaultValue: '@Smoke', description: 'run smoke tests')
@@ -26,8 +25,6 @@ pipeline {
     }
             post {
                 always{
-                        bat 'cd'
-                        bat 'dir /s TEST-*.xml'
 
                      junit '**/target/surefire-reports/TEST-*.xml'
                      allure results: [[path: 'target/allure-results']]
