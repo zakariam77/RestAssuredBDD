@@ -10,12 +10,7 @@ pipeline {
     }
 
     stages {
-    stage('cleanup') {
-    steps {
-            bat 'mvn clean'
-}
-}
-        stage('test') {
+    stage('test') {
 
             steps {
                 script{
